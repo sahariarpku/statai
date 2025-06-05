@@ -1,0 +1,5 @@
+v 3
+p stata_ai
+f stata_ai.ado
+f stata_ai.sthlp
+f stata_ai.py 
