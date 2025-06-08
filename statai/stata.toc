@@ -1,0 +1,9 @@
+v 3
+d statai
+d statai - DeepSeek API integration for Stata
+d Author: Your Name
+d Distribution-Date: 2024-03-20
+d Description: A Stata plugin that integrates with DeepSeek API for data analysis
+d URL: https://github.com/yourusername/statai
+d
+d statai.pkg 

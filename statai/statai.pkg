@@ -1,0 +1,17 @@
+v 3
+d statai
+d statai - DeepSeek API integration for Stata
+d Author: Md Sahariar Rahman
+d Affiliation: Peking University
+d Distribution-Date: 2024-03-20
+d Description: A Stata package that integrates with DeepSeek API for advanced data analysis and interpretation
+d URL: https://github.com/sahariarpku/statai
+d
+d statai.ado
+d statai.sthlp
+d statai_analyze.py
+d statai_interpret.py
+d statai_chat.py
+d install.do
+d README.md
+d LICENSE 
