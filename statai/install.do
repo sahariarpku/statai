@@ -3,26 +3,12 @@
 *! Affiliation: Peking University
 *! Date: 2024-03-20
 
-capture program drop statai
-capture program drop statai_help
-capture program drop statai_setkey
-capture program drop statai_analyze
-capture program drop statai_interpret
+capture mkdir "`c(sysdir_personal)'statai"
+copy statai.ado "`c(sysdir_personal)'statai/statai.ado", replace
+copy statai.sthlp "`c(sysdir_personal)'statai/statai.sthlp", replace
+copy statai_analyze.py "`c(sysdir_personal)'statai/statai_analyze.py", replace
+copy statai_interpret.py "`c(sysdir_personal)'statai/statai_interpret.py", replace
+copy statai_chat.py "`c(sysdir_personal)'statai/statai_chat.py", replace
 
-* Get the current directory
-local current_dir "`c(pwd)'"
-
-* Install the package
-net install statai, from("`current_dir'") replace
-
-* Make Python scripts executable
-if "`c(os)'" == "Unix" {
-    shell chmod +x "`current_dir'/statai_analyze.py"
-    shell chmod +x "`current_dir'/statai_interpret.py"
-    shell chmod +x "`current_dir'/statai_chat.py"
-}
-
-* Display success message
-display as text _n "statai package has been successfully installed!" _n
-display as text "To get started, type: statai help" _n
-display as text "Don't forget to set your API key using: statai setkey your-api-key-here" _n 
+display as text _n "statai has been installed successfully!" _n
+display as text "To get started, type: statai help" 

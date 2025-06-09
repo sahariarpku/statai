@@ -1,9 +1,13 @@
+*! statai v1.4
+*! Author: Md Sahariar Rahman
+*! Affiliation: Peking University
+*! Date: 2024-03-20
+
 v 3
-d statai
+p statai
 d statai - DeepSeek API integration for Stata
-d Author: Your Name
+d Author: Md Sahariar Rahman
+d Affiliation: Peking University
 d Distribution-Date: 2024-03-20
-d Description: A Stata plugin that integrates with DeepSeek API for data analysis
-d URL: https://github.com/yourusername/statai
-d
-d statai.pkg 
+d Description: A Stata package that integrates with DeepSeek API for advanced data analysis and interpretation
+d URL: https://github.com/sahariarpku/statai 

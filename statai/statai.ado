@@ -109,14 +109,15 @@ program define statai_analyze
         exit 198
     }
     
-    // Create tmp directory
+    // Create tmp directory if it doesn't exist
     capture mkdir tmp
     
     // Get variable information
     quietly {
         ds
         local varlist `r(varlist)'
-        file open vars using "tmp/vars.txt", write replace
+        tempfile vars_file
+        file open vars using "`vars_file'", write replace
         foreach var of local varlist {
             local vartype : type `var'
             local varformat : format `var'
@@ -158,7 +159,7 @@ program define statai_analyze
     if "`prompt'" == "" {
         // General analysis
         display as text "Analyzing dataset variables..."
-        shell python3 "`script_path'" "tmp/vars.txt"
+        shell python3 "`script_path'" "`vars_file'"
     }
     else {
         // Specific analysis with prompt
@@ -167,11 +168,8 @@ program define statai_analyze
         file write prompthandle "`prompt'"
         file close prompthandle
         display as text "Processing specific analysis request: `prompt'"
-        shell python3 "`script_path'" "`promptfile'" "tmp/vars.txt"
+        shell python3 "`script_path'" "`promptfile'" "`vars_file'"
     }
-    
-    // Cleanup
-    capture erase "tmp/vars.txt"
 end
 
 program define statai_interpret
