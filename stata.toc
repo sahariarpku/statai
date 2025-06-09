@@ -1,3 +1,8 @@
+*! statai v1.4
+*! Author: Md Sahariar Rahman
+*! Affiliation: Peking University
+*! Date: 2024-03-20
+
 v 3
 p statai
 d statai - DeepSeek API integration for Stata
